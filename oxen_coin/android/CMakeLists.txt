@@ -14,6 +14,7 @@ add_library( oxen_coin
 set(CMAKE_BUILD_TYPE Release)
 
 set(EXTERNAL_LIBS_DIR ${CMAKE_SOURCE_DIR}/../ios/External/android)
+set(CMAKE_SHARED_LINKER_FLAGS "-Wl,-Bsymbolic")
 
 add_library(wallet_api STATIC IMPORTED)
 set_target_properties(wallet_api PROPERTIES IMPORTED_LOCATION
