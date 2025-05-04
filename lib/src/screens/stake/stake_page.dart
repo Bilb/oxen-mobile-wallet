@@ -34,7 +34,7 @@ class StakePage extends BasePage {
 }
 
 class StakePageBody extends StatefulWidget {
-  StakePageBody({required Key key}) : super(key: key);x
+  StakePageBody({required Key key}) : super(key: key);
   StakePageBodyState createState() => StakePageBodyState();
 }
 
@@ -114,7 +114,7 @@ class StakePageBodyState extends State<StakePageBody> {
                       child: Text(t
                           .registration_taking_migration_oxen_to_session_token),
                       onPressed: () => _launchUrl(
-                          "https://oxen.io/blog/oxen-anchor-hardfork-11-1-0"),
+                          "https://oxen.io/blog/oxen-anchor-hardfork-11-2-0"),
                     )
                   ],
                 ),
