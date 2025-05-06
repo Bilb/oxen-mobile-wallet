@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:oxen_wallet/palette.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:oxen_wallet/src/widgets/nav_bar.dart';
-import 'package:provider/provider.dart';
-import 'package:oxen_wallet/themes.dart';
-import 'package:oxen_wallet/theme_changer.dart';
 import 'package:oxen_wallet/l10n.dart';
 
 enum AppBarStyle { regular, withShadow }
@@ -55,7 +54,7 @@ abstract class BasePage extends StatelessWidget {
             style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600,
-                color: Theme.of(context).primaryTextTheme.titleLarge?.color),
+                color: Theme.of(context).primaryTextTheme.headline6?.color),
           );
   }
 
@@ -64,9 +63,6 @@ abstract class BasePage extends StatelessWidget {
   Widget? floatingActionButton(BuildContext context) => null;
 
   ObstructingPreferredSizeWidget appBar(BuildContext context) {
-    final _themeChanger = Provider.of<ThemeChanger>(context);
-    final _isDarkTheme = _themeChanger.getTheme() == Themes.darkTheme;
-
     switch (appBarStyle) {
       case AppBarStyle.regular:
         return NavBar(
@@ -74,9 +70,7 @@ abstract class BasePage extends StatelessWidget {
             leading: leading(context),
             middle: middle(context),
             trailing: trailing(context),
-            backgroundColor: _isDarkTheme
-                ? Theme.of(context).backgroundColor
-                : backgroundColor);
+            backgroundColor: PaletteDark.darkThemeBackgroundDark);
 
       case AppBarStyle.withShadow:
         return NavBar.withShadow(
@@ -84,19 +78,7 @@ abstract class BasePage extends StatelessWidget {
             leading: leading(context),
             middle: middle(context),
             trailing: trailing(context),
-            backgroundColor: _isDarkTheme
-                ? Theme.of(context).backgroundColor
-                : backgroundColor);
-
-      default:
-        return NavBar(
-            context: context,
-            leading: leading(context),
-            middle: middle(context),
-            trailing: trailing(context),
-            backgroundColor: _isDarkTheme
-                ? Theme.of(context).backgroundColor
-                : backgroundColor);
+            backgroundColor: PaletteDark.darkThemeBackgroundDark);
     }
   }
 
@@ -106,12 +88,8 @@ abstract class BasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _themeChanger = Provider.of<ThemeChanger>(context);
-    final _isDarkTheme = _themeChanger.getTheme() == Themes.darkTheme;
-
     return Scaffold(
-        backgroundColor:
-            _isDarkTheme ? Theme.of(context).backgroundColor : backgroundColor,
+        backgroundColor: PaletteDark.darkThemeBackgroundDark,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         appBar: appBar(context),
         body: SafeArea(child: body(context)),

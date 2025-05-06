@@ -11,6 +11,7 @@ import 'package:oxen_wallet/src/widgets/scollable_with_bottom_section.dart';
 import 'package:oxen_wallet/src/stores/wallet_list/wallet_list_store.dart';
 import 'package:oxen_wallet/src/screens/wallet_list/wallet_menu.dart';
 import 'package:oxen_wallet/src/widgets/picker.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 
 class WalletListPage extends BasePage {
   @override
@@ -75,7 +76,7 @@ class WalletListBodyState extends State<WalletListBody> {
                                         ? OxenPalette.teal
                                         : Theme.of(context)
                                             .primaryTextTheme
-                                            .headlineSmall
+                                            .headline5
                                             ?.color,
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w600),
@@ -107,11 +108,10 @@ class WalletListBodyState extends State<WalletListBody> {
                   Navigator.of(context).pushNamed(Routes.restoreWalletOptions),
               iconData: Icons.refresh_rounded,
               text: tr(context).wallet_list_restore_wallet,
-              color: Theme.of(context).accentTextTheme.button?.backgroundColor,
-              borderColor:
-                  Theme.of(context).accentTextTheme.button?.decorationColor,
+              color: PaletteDark.darkThemeIndigoButton,
+              borderColor: PaletteDark.darkThemeIndigoButtonBorder,
               iconColor: Theme.of(context).primaryTextTheme.caption?.color,
-              iconBackgroundColor: Theme.of(context).accentIconTheme.color)
+              iconBackgroundColor: PaletteDark.darkThemeIndigoButtonBorder)
         ]));
   }
 }

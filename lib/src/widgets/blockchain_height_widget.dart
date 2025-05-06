@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:oxen_wallet/l10n.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:oxen_wallet/src/wallet/oxen/get_height_by_date.dart';
 import 'package:oxen_wallet/palette.dart';
 
@@ -59,7 +60,7 @@ class BlockchainHeightState extends State<BlockchainHeightWidget> {
             style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.bold,
-                color: Theme.of(context).primaryTextTheme.titleLarge?.color),
+                color: Theme.of(context).primaryTextTheme.headline6?.color),
           ),
         ),
         Row(

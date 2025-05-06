@@ -1,3 +1,4 @@
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:flutter/material.dart';
@@ -90,7 +91,7 @@ class SeedPage extends BasePage {
                                 fontSize: 14.0,
                                 color: Theme.of(context)
                                     .primaryTextTheme
-                                    .titleLarge
+                                    .headline6
                                     ?.color),
                           )
                         ],
@@ -136,14 +137,9 @@ class SeedPage extends BasePage {
                                         );
                                       },
                                       text: tr(context).copy,
-                                      color: Theme.of(context)
-                                          .accentTextTheme
-                                          .caption
-                                          ?.backgroundColor,
-                                      borderColor: Theme.of(context)
-                                          .accentTextTheme
-                                          .caption
-                                          ?.decorationColor),
+                                      color: PaletteDark.darkThemeTitleViolet,
+                                      borderColor: PaletteDark
+                                          .darkThemeBlueButtonBorder),
                                 )))
                       ],
                     ),

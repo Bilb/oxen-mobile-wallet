@@ -13,12 +13,20 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 35
+    namespace = "io.oxen.wallet"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 23
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             // Encapsulates your CMake build configurations.

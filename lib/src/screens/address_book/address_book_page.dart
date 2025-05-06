@@ -7,6 +7,7 @@ import 'package:oxen_wallet/l10n.dart';
 import 'package:oxen_wallet/palette.dart';
 import 'package:oxen_wallet/routes.dart';
 import 'package:oxen_wallet/src/screens/base_page.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:oxen_wallet/src/stores/address_book/address_book_store.dart';
 import 'package:oxen_wallet/src/widgets/oxen_dialog.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,7 @@ class AddressBookPage extends BasePage {
         width: 28.0,
         height: 28.0,
         decoration: BoxDecoration(
-            shape: BoxShape.circle, color: Theme.of(context).selectedRowColor),
+            shape: BoxShape.circle, color: OxenPalette.tealWithOpacity),
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
@@ -110,7 +111,7 @@ class AddressBookPage extends BasePage {
                         fontSize: 16.0,
                         color: Theme.of(context)
                             .primaryTextTheme
-                            .titleLarge
+                            .headline6
                             ?.color),
                   ),
                 );

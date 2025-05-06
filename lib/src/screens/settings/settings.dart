@@ -17,6 +17,7 @@ import 'package:oxen_wallet/src/screens/settings/widgets/settings_link_list_row.
 import 'package:oxen_wallet/src/screens/settings/widgets/settings_raw_widget_list_row.dart';
 import 'package:oxen_wallet/src/screens/settings/widgets/settings_switch_list_row.dart';
 import 'package:oxen_wallet/src/screens/settings/widgets/settings_text_list_row.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
 import 'package:oxen_wallet/src/wallet/crypto_amount_format.dart';
 import 'package:oxen_wallet/src/wallet/oxen/transaction/transaction_priority.dart';
@@ -290,10 +291,7 @@ class SettingsFormState extends State<SettingsForm> {
                   _getWidget(item),
                   _isDrawDivider
                       ? Container(
-                          color: Theme.of(context)
-                              .accentTextTheme
-                              .headlineSmall
-                              ?.backgroundColor,
+                          color: PaletteDark.darkThemeMidGrey,
                           padding: EdgeInsets.only(
                             left: 20.0,
                             right: 20.0,

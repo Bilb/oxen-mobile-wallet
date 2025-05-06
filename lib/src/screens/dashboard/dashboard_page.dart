@@ -9,6 +9,7 @@ import 'package:oxen_wallet/src/screens/base_page.dart';
 import 'package:oxen_wallet/src/screens/dashboard/date_section_row.dart';
 import 'package:oxen_wallet/src/screens/dashboard/transaction_row.dart';
 import 'package:oxen_wallet/src/screens/dashboard/wallet_menu.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:oxen_wallet/src/stores/action_list/action_list_store.dart';
 import 'package:oxen_wallet/src/stores/action_list/date_section_item.dart';
 import 'package:oxen_wallet/src/stores/action_list/transaction_list_item.dart';
@@ -46,7 +47,7 @@ class DashboardPage extends BasePage {
             Text(
               walletStore.name,
               style: TextStyle(
-                  color: Theme.of(context).primaryTextTheme.titleLarge?.color),
+                  color: Theme.of(context).primaryTextTheme.headline6?.color),
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 5),
@@ -55,7 +56,7 @@ class DashboardPage extends BasePage {
               style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 10,
-                  color: Theme.of(context).primaryTextTheme.titleLarge?.color),
+                  color: Theme.of(context).primaryTextTheme.headline6?.color),
               overflow: TextOverflow.ellipsis,
             ),
           ]);
@@ -137,7 +138,7 @@ class DashboardPageBodyState extends State<DashboardPageBody> {
                   return Container(
                     margin: EdgeInsets.only(bottom: 20),
                     decoration: BoxDecoration(
-                        color: Theme.of(context).backgroundColor,
+                        color: PaletteDark.darkThemeBackgroundDark,
                         boxShadow: [
                           BoxShadow(
                               color: Palette.shadowGreyWithOpacity,

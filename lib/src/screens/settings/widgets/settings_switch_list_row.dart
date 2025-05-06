@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:oxen_wallet/l10n.dart';
+import 'package:oxen_wallet/palette.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
 import 'package:oxen_wallet/src/widgets/standart_switch.dart';
 import 'package:oxen_wallet/theme_changer.dart';
@@ -41,7 +43,7 @@ class SettingsSwitchListRow extends StatelessWidget {
                 final dark = !settingsStore.isDarkTheme;
                 settingsStore.saveDarkTheme(dark);
                 Provider.of<ThemeChanger>(context, listen: false)
-                    .setTheme(dark ? Themes.darkTheme : Themes.lightTheme);
+                    .setTheme(Themes.darkTheme);
               }));
 
     if (title == tr(context).settings_enable_fiat_currency)
@@ -95,13 +97,13 @@ class SettingsSwitchListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).accentTextTheme.headlineSmall?.backgroundColor,
+      color: PaletteDark.darkThemeBlack,
       child: ListTile(
           contentPadding: EdgeInsets.only(left: 20.0, right: 20.0),
           title: Text(title,
               style: TextStyle(
                   fontSize: 16.0,
-                  color: Theme.of(context).primaryTextTheme.titleLarge?.color)),
+                  color: Theme.of(context).primaryTextTheme.headline6?.color)),
           trailing: _getSwitch(context)),
     );
   }

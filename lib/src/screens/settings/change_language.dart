@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:oxen_wallet/l10n.dart';
+import 'package:oxen_wallet/palette.dart';
 import 'package:oxen_wallet/src/screens/base_page.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 import 'package:oxen_wallet/src/stores/settings/settings_store.dart';
 import 'package:oxen_wallet/src/widgets/oxen_dialog.dart';
 import 'package:provider/provider.dart';
@@ -15,9 +17,8 @@ class ChangeLanguage extends BasePage {
     final settingsStore = Provider.of<SettingsStore>(context);
     final langNotifier = Provider.of<LanguageNotifier>(context);
 
-    final currentColor = Theme.of(context).selectedRowColor;
-    final notCurrentColor =
-        Theme.of(context).accentTextTheme.subtitle1?.backgroundColor;
+    final currentColor = OxenPalette.tealWithOpacity;
+    final notCurrentColor = PaletteDark.darkThemeMidGrey;
 
     final t = tr(context);
 
@@ -44,7 +45,7 @@ class ChangeLanguage extends BasePage {
                   style: TextStyle(
                       fontSize: 16.0,
                       color:
-                          Theme.of(context).primaryTextTheme.titleLarge?.color),
+                          Theme.of(context).primaryTextTheme.headline6?.color),
                 ),
                 onTap: () async {
                   if (!isCurrent) {

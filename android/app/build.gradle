@@ -32,8 +32,16 @@ if (keystorePropertiesFile.exists()) {
 
 
 
+
 android {
     compileSdkVersion 35
+    namespace = "io.oxen.wallet"
+
+    compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -45,7 +53,7 @@ android {
 
     defaultConfig {
         applicationId "io.oxen.wallet"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

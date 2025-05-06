@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:oxen_wallet/palette.dart';
+import 'package:oxen_wallet/src/screens/text_theme_extensions.dart';
 
 class SettingsTextListRow extends StatelessWidget {
   SettingsTextListRow(
@@ -11,7 +13,7 @@ class SettingsTextListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).accentTextTheme.headlineSmall?.backgroundColor,
+      color: PaletteDark.darkThemeBlack,
       child: ListTile(
         contentPadding: EdgeInsets.only(left: 20.0, right: 20.0),
         title: Row(
@@ -22,8 +24,7 @@ class SettingsTextListRow extends StatelessWidget {
                 title,
                 style: TextStyle(
                     fontSize: 16.0,
-                    color:
-                        Theme.of(context).primaryTextTheme.titleLarge?.color),
+                    color: Theme.of(context).primaryTextTheme.headline6?.color),
               ),
             ),
             Flexible(child: widget)

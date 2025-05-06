@@ -25,8 +25,7 @@ class RestoreButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
       decoration: BoxDecoration(
-          color:
-              Theme.of(context).accentTextTheme.headlineSmall?.backgroundColor,
+          color: PaletteDark.darkThemeBlack,
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           boxShadow: [
             BoxShadow(
@@ -44,7 +43,6 @@ class RestoreButton extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              // imageWidget, // TODO: Wait for new Images
               Column(
                 children: <Widget>[
                   Padding(
@@ -63,10 +61,7 @@ class RestoreButton extends StatelessWidget {
                         description,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Theme.of(context)
-                              .accentTextTheme
-                              .subtitle1
-                              ?.color,
+                          color: Palette.wildDarkBlue,
                         ),
                         maxLines: 2,
                       ))
@@ -79,13 +74,7 @@ class RestoreButton extends StatelessWidget {
                   height: 56.0,
                   decoration: BoxDecoration(
                     border: Border(
-                        top: BorderSide(
-                            color: Theme.of(context)
-                                    .accentTextTheme
-                                    .headlineSmall
-                                    ?.decorationColor ??
-                                OxenPalette.teal,
-                            width: 1.15)),
+                        top: BorderSide(color: OxenPalette.teal, width: 1.15)),
                     color: Colors.transparent,
                   ),
                   child: Center(

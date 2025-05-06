@@ -152,11 +152,9 @@ class OxenWalletApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final settingsStore = Provider.of<SettingsStore>(context);
 
     return ChangeNotifierProvider(
-        create: (_) => ThemeChanger(
-            settingsStore.isDarkTheme ? Themes.darkTheme : Themes.lightTheme),
+        create: (_) => ThemeChanger(Themes.darkTheme),
         builder: (context, child) => ChangeNotifierProvider(
               create: (_) => LanguageNotifier(),
               builder: (context, child) => MaterialAppWithTheme(),
