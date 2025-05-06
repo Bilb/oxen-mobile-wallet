@@ -19,8 +19,8 @@ class BlockchainHeightState extends State<BlockchainHeightWidget> {
 
   @override
   void initState() {
-    restoreHeightController.addListener(
-            () => _height = int.parse(restoreHeightController.text));
+    restoreHeightController
+        .addListener(() => _height = int.parse(restoreHeightController.text));
     super.initState();
   }
 
@@ -43,8 +43,8 @@ class BlockchainHeightState extends State<BlockchainHeightWidget> {
                     hintStyle: TextStyle(color: Theme.of(context).hintColor),
                     hintText: tr(context).widgets_restore_from_blockheight,
                     focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: OxenPalette.teal, width: 2.0)),
+                        borderSide:
+                            BorderSide(color: OxenPalette.teal, width: 2.0)),
                     enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                             color: Theme.of(context).focusColor, width: 1.0))),
@@ -59,7 +59,7 @@ class BlockchainHeightState extends State<BlockchainHeightWidget> {
             style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.bold,
-                color: Theme.of(context).primaryTextTheme.headline6?.color),
+                color: Theme.of(context).primaryTextTheme.titleLarge?.color),
           ),
         ),
         Row(
@@ -77,8 +77,7 @@ class BlockchainHeightState extends State<BlockchainHeightWidget> {
                         hintText: tr(context).widgets_restore_from_date,
                         focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                                color: OxenPalette.teal,
-                                width: 2.0)),
+                                color: OxenPalette.teal, width: 2.0)),
                         enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                                 color: Theme.of(context).focusColor,

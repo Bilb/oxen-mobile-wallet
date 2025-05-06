@@ -9,7 +9,9 @@ import 'package:oxen_wallet/l10n.dart';
 enum AppBarStyle { regular, withShadow }
 
 abstract class BasePage extends StatelessWidget {
-  String? getTitle(AppLocalizations t) { return null; }
+  String? getTitle(AppLocalizations t) {
+    return null;
+  }
 
   bool get isModalBackButton => false;
 
@@ -53,7 +55,7 @@ abstract class BasePage extends StatelessWidget {
             style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600,
-                color: Theme.of(context).primaryTextTheme.headline6?.color),
+                color: Theme.of(context).primaryTextTheme.titleLarge?.color),
           );
   }
 
@@ -115,7 +117,6 @@ abstract class BasePage extends StatelessWidget {
         body: SafeArea(child: body(context)),
         floatingActionButton: floatingActionButton(context),
         bottomNavigationBar: bottomNavigationBar(context),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat
-    );
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat);
   }
 }

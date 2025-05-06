@@ -20,20 +20,18 @@ class SettingsSwitchListRow extends StatelessWidget {
           builder: (_) => StandartSwitch(
               value: settingsStore.shouldSaveRecipientAddress,
               onTaped: () {
-                settingsStore.setSaveRecipientAddress(!settingsStore.shouldSaveRecipientAddress);
-              }
-          )
-      );
+                settingsStore.setSaveRecipientAddress(
+                    !settingsStore.shouldSaveRecipientAddress);
+              }));
 
     if (title == tr(context).settings_allow_biometric_authentication)
       return Observer(
           builder: (_) => StandartSwitch(
               value: settingsStore.allowBiometricAuthentication,
               onTaped: () {
-                settingsStore.setAllowBiometricAuthentication(!settingsStore.allowBiometricAuthentication);
-              }
-          )
-      );
+                settingsStore.setAllowBiometricAuthentication(
+                    !settingsStore.allowBiometricAuthentication);
+              }));
 
     if (title == tr(context).settings_dark_mode)
       return Observer(
@@ -42,60 +40,54 @@ class SettingsSwitchListRow extends StatelessWidget {
               onTaped: () {
                 final dark = !settingsStore.isDarkTheme;
                 settingsStore.saveDarkTheme(dark);
-                Provider.of<ThemeChanger>(context, listen: false).setTheme(dark ? Themes.darkTheme : Themes.lightTheme);
-              }
-          )
-      );
+                Provider.of<ThemeChanger>(context, listen: false)
+                    .setTheme(dark ? Themes.darkTheme : Themes.lightTheme);
+              }));
 
     if (title == tr(context).settings_enable_fiat_currency)
       return Observer(
           builder: (_) => StandartSwitch(
               value: settingsStore.enableFiatCurrency,
               onTaped: () {
-                settingsStore.setEnableFiatCurrency(!settingsStore.enableFiatCurrency);
-              }
-          )
-      );
+                settingsStore
+                    .setEnableFiatCurrency(!settingsStore.enableFiatCurrency);
+              }));
 
     if (title == tr(context).settings_show_full)
       return Observer(
           builder: (_) => StandartSwitch(
               value: settingsStore.balanceShowFull,
               onTaped: () {
-                settingsStore.setBalanceShowFull(!settingsStore.balanceShowFull);
-              }
-          )
-      );
+                settingsStore
+                    .setBalanceShowFull(!settingsStore.balanceShowFull);
+              }));
 
     if (title == tr(context).settings_show_available)
       return Observer(
           builder: (_) => StandartSwitch(
               value: settingsStore.balanceShowAvailable,
               onTaped: () {
-                settingsStore.setBalanceShowAvailable(!settingsStore.balanceShowAvailable);
-              }
-          )
-      );
+                settingsStore.setBalanceShowAvailable(
+                    !settingsStore.balanceShowAvailable);
+              }));
 
     if (title == tr(context).settings_show_pending)
       return Observer(
           builder: (_) => StandartSwitch(
               value: settingsStore.balanceShowPending,
               onTaped: () {
-                settingsStore.setBalanceShowPending(!settingsStore.balanceShowPending);
-              }
-          )
-      );
+                settingsStore
+                    .setBalanceShowPending(!settingsStore.balanceShowPending);
+              }));
 
     if (title == tr(context).settings_full_incl_pending)
       return Observer(
           builder: (_) => StandartSwitch(
               value: settingsStore.balanceFullIncludesPending,
               onTaped: () {
-                settingsStore.setBalanceFullIncludesPending(!settingsStore.balanceFullIncludesPending);
-              }
-          )
-      );
+                settingsStore.setBalanceFullIncludesPending(
+                    !settingsStore.balanceFullIncludesPending);
+              }));
 
     return null;
   }
@@ -103,13 +95,13 @@ class SettingsSwitchListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).accentTextTheme.headline5?.backgroundColor,
+      color: Theme.of(context).accentTextTheme.headlineSmall?.backgroundColor,
       child: ListTile(
           contentPadding: EdgeInsets.only(left: 20.0, right: 20.0),
           title: Text(title,
               style: TextStyle(
                   fontSize: 16.0,
-                  color: Theme.of(context).primaryTextTheme.headline6?.color)),
+                  color: Theme.of(context).primaryTextTheme.titleLarge?.color)),
           trailing: _getSwitch(context)),
     );
   }

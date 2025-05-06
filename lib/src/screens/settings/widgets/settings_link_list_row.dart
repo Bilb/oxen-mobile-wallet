@@ -13,7 +13,7 @@ class SettingsLinktListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).accentTextTheme.headline5?.backgroundColor,
+      color: Theme.of(context).accentTextTheme.headlineSmall?.backgroundColor,
       child: ListTile(
         contentPadding: EdgeInsets.only(left: 20.0, right: 20.0),
         title: Row(
@@ -28,15 +28,18 @@ class SettingsLinktListRow extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 15.0,
                     fontWeight: FontWeight.w500,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
               ),
             )
           ],
         ),
-        trailing: link == null ? null : Text(
-          link!,
-          style: TextStyle(fontSize: 14.0, color: OxenPalette.teal),
-        ),
+        trailing: link == null
+            ? null
+            : Text(
+                link!,
+                style: TextStyle(fontSize: 14.0, color: OxenPalette.teal),
+              ),
         onTap: onTaped,
       ),
     );

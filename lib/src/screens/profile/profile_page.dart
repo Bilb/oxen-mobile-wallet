@@ -46,39 +46,43 @@ class ProfilePageBodyState extends State<ProfilePageBody> {
           children: [
             NavListArrow(
                 leading: Icon(Icons.account_balance_wallet_rounded,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
                 text: t.wallets,
                 onTap: () =>
                     Navigator.of(context).pushNamed(Routes.walletList)),
             NavListArrow(
                 leading: Icon(Icons.settings_rounded,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
                 text: t.settings_title,
-                onTap: () =>
-                    Navigator.of(context).pushNamed(Routes.settings)),
+                onTap: () => Navigator.of(context).pushNamed(Routes.settings)),
             NavListHeader(title: t.wallet_menu),
             NavListArrow(
                 leading: Icon(Icons.attach_money_rounded,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
                 text: t.title_stakes,
-                onTap: () =>
-                    Navigator.of(context).pushNamed(Routes.stake)),
+                onTap: () => Navigator.of(context).pushNamed(Routes.stake)),
             NavListArrow(
                 leading: Icon(Icons.contacts_rounded,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
                 text: t.address_book_menu,
                 onTap: () =>
                     Navigator.of(context).pushNamed(Routes.addressBook)),
             NavListArrow(
                 leading: Icon(Icons.account_circle_rounded,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
                 text: t.accounts,
                 onTap: () =>
                     Navigator.of(context).pushNamed(Routes.accountList)),
             NavListHeader(title: t.dangerzone),
             NavListArrow(
                 leading: Icon(Icons.vpn_key_rounded,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
                 text: t.show_keys,
                 onTap: () => Navigator.of(context).pushNamed(Routes.auth,
                     arguments: (bool isAuthenticatedSuccessfully,
@@ -89,7 +93,8 @@ class ProfilePageBodyState extends State<ProfilePageBody> {
                             : null)),
             NavListArrow(
                 leading: Icon(Icons.vpn_key_rounded,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
                 text: t.show_seed,
                 onTap: () => Navigator.of(context).pushNamed(Routes.auth,
                     arguments: (bool isAuthenticatedSuccessfully,

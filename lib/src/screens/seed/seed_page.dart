@@ -13,7 +13,8 @@ class SeedPage extends BasePage {
   SeedPage({this.onCloseCallback});
 
   // static final image = Image.asset('assets/images/seed_image.png');
-  static final image = Image.asset('assets/images/oxen.png', height: 124, width: 400);
+  static final image =
+      Image.asset('assets/images/oxen.png', height: 124, width: 400);
 
   @override
   bool get isModalBackButton => true;
@@ -24,8 +25,9 @@ class SeedPage extends BasePage {
   final VoidCallback? onCloseCallback;
 
   @override
-  void onClose(BuildContext context) =>
-      onCloseCallback != null ? onCloseCallback!() : Navigator.of(context).pop();
+  void onClose(BuildContext context) => onCloseCallback != null
+      ? onCloseCallback!()
+      : Navigator.of(context).pop();
 
   @override
   Widget? leading(BuildContext context) {
@@ -88,7 +90,7 @@ class SeedPage extends BasePage {
                                 fontSize: 14.0,
                                 color: Theme.of(context)
                                     .primaryTextTheme
-                                    .headline6
+                                    .titleLarge
                                     ?.color),
                           )
                         ],
@@ -122,11 +124,14 @@ class SeedPage extends BasePage {
                                       onPressed: () {
                                         Clipboard.setData(
                                             ClipboardData(text: _seed));
-                                        ScaffoldMessenger.of(context).showSnackBar(
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
                                           SnackBar(
-                                            content: Text(tr(context).copied_to_clipboard),
+                                            content: Text(tr(context)
+                                                .copied_to_clipboard),
                                             backgroundColor: Colors.green,
-                                            duration: Duration(milliseconds: 1500),
+                                            duration:
+                                                Duration(milliseconds: 1500),
                                           ),
                                         );
                                       },

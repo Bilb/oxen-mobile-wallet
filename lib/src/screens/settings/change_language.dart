@@ -22,8 +22,9 @@ class ChangeLanguage extends BasePage {
     final t = tr(context);
 
     final languages = <LanguageName>[
-        LanguageName('', t.change_language_system_default),
-        ...languageNames];
+      LanguageName('', t.change_language_system_default),
+      ...languageNames
+    ];
 
     return Container(
         padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
@@ -31,7 +32,8 @@ class ChangeLanguage extends BasePage {
           itemCount: languages.length,
           itemBuilder: (BuildContext context, int index) {
             final lang = languages[index];
-            final isCurrent = lang.code == (settingsStore.languageOverride ?? '');
+            final isCurrent =
+                lang.code == (settingsStore.languageOverride ?? '');
 
             return Container(
               margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
@@ -41,8 +43,8 @@ class ChangeLanguage extends BasePage {
                   lang.name,
                   style: TextStyle(
                       fontSize: 16.0,
-                      color: Theme.of(context).primaryTextTheme.headline6?.color
-                  ),
+                      color:
+                          Theme.of(context).primaryTextTheme.titleLarge?.color),
                 ),
                 onTap: () async {
                   if (!isCurrent) {
@@ -51,7 +53,8 @@ class ChangeLanguage extends BasePage {
                       t.change_language,
                       t.change_language_to(lang.name),
                       onPressed: (context) {
-                        settingsStore.saveLanguageOverride(lang.code == '' ? null : lang.code);
+                        settingsStore.saveLanguageOverride(
+                            lang.code == '' ? null : lang.code);
                         langNotifier.trigger();
                         Navigator.of(context).pop();
                       },

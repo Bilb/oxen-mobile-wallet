@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SettingsTextListRow extends StatelessWidget {
-  SettingsTextListRow({this.onTaped, required this.title, required this.widget});
+  SettingsTextListRow(
+      {this.onTaped, required this.title, required this.widget});
 
   final VoidCallback? onTaped;
   final String title;
@@ -10,7 +11,7 @@ class SettingsTextListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).accentTextTheme.headline5?.backgroundColor,
+      color: Theme.of(context).accentTextTheme.headlineSmall?.backgroundColor,
       child: ListTile(
         contentPadding: EdgeInsets.only(left: 20.0, right: 20.0),
         title: Row(
@@ -21,7 +22,8 @@ class SettingsTextListRow extends StatelessWidget {
                 title,
                 style: TextStyle(
                     fontSize: 16.0,
-                    color: Theme.of(context).primaryTextTheme.headline6?.color),
+                    color:
+                        Theme.of(context).primaryTextTheme.titleLarge?.color),
               ),
             ),
             Flexible(child: widget)

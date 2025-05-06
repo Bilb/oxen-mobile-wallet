@@ -102,9 +102,12 @@ class ReceiveBodyState extends State<ReceiveBody> {
                                     size: 100.0,
                                     version: QrVersions.auto,
                                     errorCorrectionLevel: QrErrorCorrectLevel.M,
-                                    data: walletStore.subaddress.address + walletStore.amountValue,
-                                    embeddedImage: AssetImage('assets/images/oxen.png'),
-                                    embeddedImageStyle: QrEmbeddedImageStyle(size: Size(40, 40)),
+                                    data: walletStore.subaddress.address +
+                                        walletStore.amountValue,
+                                    embeddedImage:
+                                        AssetImage('assets/images/oxen.png'),
+                                    embeddedImageStyle: QrEmbeddedImageStyle(
+                                        size: Size(40, 40)),
                                     backgroundColor: OxenPalette.whiteBlue,
                                     foregroundColor: OxenPalette.navy,
                                   ),
@@ -118,34 +121,34 @@ class ReceiveBodyState extends State<ReceiveBody> {
                           children: <Widget>[
                             Expanded(
                                 child: Container(
-                              padding: EdgeInsets.all(20.0),
-                              child: Center(
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Clipboard.setData(ClipboardData(
-                                        text: walletStore.subaddress.address));
-                                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                      content: Text(
-                                        tr(context).copied_to_clipboard,
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      backgroundColor: Colors.green,
-                                    ));
-                                  },
-                                  child: Text(
-                                    walletStore.subaddress.address,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 14.0,
-                                        fontWeight: FontWeight.w600,
-                                        color: Theme.of(context)
-                                            .primaryTextTheme
-                                            .headline6
-                                            ?.color)
-                                  )
-                                )
-                              )
-                            ))
+                                    padding: EdgeInsets.all(20.0),
+                                    child: Center(
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              Clipboard.setData(ClipboardData(
+                                                  text: walletStore
+                                                      .subaddress.address));
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                content: Text(
+                                                  tr(context)
+                                                      .copied_to_clipboard,
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                ),
+                                                backgroundColor: Colors.green,
+                                              ));
+                                            },
+                                            child: Text(
+                                                walletStore.subaddress.address,
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontSize: 14.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Theme.of(context)
+                                                        .primaryTextTheme
+                                                        .titleLarge
+                                                        ?.color))))))
                           ],
                         );
                       }),
@@ -155,18 +158,20 @@ class ReceiveBodyState extends State<ReceiveBody> {
                               child: Form(
                                   key: _formKey,
                                   child: OxenTextField(
-                                    keyboardType:
-                                        TextInputType.numberWithOptions(decimal: true),
-                                    inputFormatters: [
-                                      FilteringTextInputFormatter.deny(RegExp('[- ]'))
-                                    ],
-                                    hintText: tr(context).receive_amount,
-                                    validator: (value) {
-                                      walletStore.validateAmount(value ?? '', tr(context));
-                                      return walletStore.errorMessage;
-                                    },
-                                    controller: amountController
-                                  )))
+                                      keyboardType:
+                                          TextInputType.numberWithOptions(
+                                              decimal: true),
+                                      inputFormatters: [
+                                        FilteringTextInputFormatter.deny(
+                                            RegExp('[- ]'))
+                                      ],
+                                      hintText: tr(context).receive_amount,
+                                      validator: (value) {
+                                        walletStore.validateAmount(
+                                            value ?? '', tr(context));
+                                        return walletStore.errorMessage;
+                                      },
+                                      controller: amountController)))
                         ],
                       )
                     ],
@@ -176,7 +181,10 @@ class ReceiveBodyState extends State<ReceiveBody> {
                   children: <Widget>[
                     Expanded(
                         child: Container(
-                      color: Theme.of(context).accentTextTheme.headline5?.color,
+                      color: Theme.of(context)
+                          .accentTextTheme
+                          .headlineSmall
+                          ?.color,
                       child: Column(
                         children: <Widget>[
                           ListTile(
@@ -186,7 +194,7 @@ class ReceiveBodyState extends State<ReceiveBody> {
                                   fontSize: 16.0,
                                   color: Theme.of(context)
                                       .primaryTextTheme
-                                      .headline5
+                                      .headlineSmall
                                       ?.color),
                             ),
                             trailing: Container(
@@ -250,7 +258,7 @@ class ReceiveBodyState extends State<ReceiveBody> {
                                         fontSize: 16.0,
                                         color: Theme.of(context)
                                             .primaryTextTheme
-                                            .headline5
+                                            .headlineSmall
                                             ?.color),
                                   ),
                                 )

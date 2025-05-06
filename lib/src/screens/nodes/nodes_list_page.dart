@@ -116,7 +116,7 @@ class NodeListPageBodyState extends State<NodeListPageBody> {
                                 fontSize: 16.0,
                                 color: Theme.of(context)
                                     .primaryTextTheme
-                                    .headline6
+                                    .titleLarge
                                     ?.color),
                           ),
                           trailing: FutureBuilder(

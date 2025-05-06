@@ -93,7 +93,7 @@ class AccountListPage extends BasePage {
                                 fontSize: 16.0,
                                 color: Theme.of(context)
                                     .primaryTextTheme
-                                    .headline5
+                                    .headlineSmall
                                     ?.color),
                           ),
                           onTap: () {
